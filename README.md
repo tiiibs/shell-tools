@@ -29,7 +29,7 @@ A one line style command to get the count of tcp connections by state. This can 
 
 
 ```bash 
-port=61616;for stat in $(netstat -na | grep $port | awk '{ print $6}' | sort |uniq) ; do  echo -n "$stat: "  ;  netstat -na | grep $port | grep "$stat" -c ;done;
+port=61616;for stat in $(netstat -na | grep ":$port " | awk '{ print $6}' | sort |uniq) ; do  echo -n "$stat: "  ;  netstat -na | grep ":$port " | grep "$stat" -c ;done;
 ```
 Output
 
